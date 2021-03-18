@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <header>
         <div className="container">
-          a
+          Placeholder
         </div>
       </header>
       <div className="container">

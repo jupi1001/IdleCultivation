@@ -4,15 +4,20 @@ function UpgradeComponent(props: {
   name: String;
   effect: String;
   cost: Number;
+  xpMultiplier: Number;
   xp: Number;
   setGlobalXPChild: any;
 }) {
   const [icost, setICost] = useState(props.cost);
   const [level, setLevel] = useState(0);
+  const [xpRate, setXpRate] = useState(0);
+
   const increaseLevel = () => {
     setLevel(level + 1);
-    props.setGlobalXPChild(props.xp.valueOf() - icost.valueOf());
+    if (props.xp.valueOf() > 0)
+      props.setGlobalXPChild(props.xp.valueOf() - icost.valueOf());
     setICost(icost.valueOf() * 1.1);
+    setXpRate(props.cost.valueOf() / props.xpMultiplier.valueOf());
   };
 
   return (
@@ -26,9 +31,7 @@ function UpgradeComponent(props: {
         </button>
       </td>
       <td>{level}</td>
-      <progress className="progress" value="15" max="100">
-        15%
-      </progress>
+      <td>{xpRate}</td>
     </>
   );
 }
