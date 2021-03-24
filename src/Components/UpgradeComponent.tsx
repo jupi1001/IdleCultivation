@@ -7,17 +7,22 @@ function UpgradeComponent(props: {
   xpMultiplier: Number;
   xp: Number;
   setGlobalXPChild: any;
+  xpRate: Number;
+  setXpRate: any;
 }) {
   const [icost, setICost] = useState(props.cost);
   const [level, setLevel] = useState(0);
-  const [xpRate, setXpRate] = useState(0);
 
   const increaseLevel = () => {
-    setLevel(level + 1);
-    if (props.xp.valueOf() > 0)
+    if (props.xp.valueOf() >= 0 && props.xp.valueOf() - icost.valueOf() >= 0) {
+      setLevel(level + 1);
       props.setGlobalXPChild(props.xp.valueOf() - icost.valueOf());
-    setICost(icost.valueOf() * 1.1);
-    setXpRate(props.cost.valueOf() / props.xpMultiplier.valueOf());
+      setICost(icost.valueOf() * 1.1);
+      //TODO Good XpRate Formula
+      props.setXpRate(
+        ((props.xpRate.valueOf() + 1) * props.xpMultiplier.valueOf()) / 2
+      );
+    }
   };
 
   return (
@@ -31,7 +36,7 @@ function UpgradeComponent(props: {
         </button>
       </td>
       <td>{level}</td>
-      <td>{xpRate}</td>
+      <td>{props.xpRate}</td>
     </>
   );
 }
