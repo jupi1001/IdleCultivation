@@ -36,7 +36,7 @@ function UpgradeComponent(props: {
         </button>
       </td>
       <td>{level}</td>
-      <td>{props.xpRate}</td>
+      <td>{props.xpRate.toPrecision(3)}</td>
     </>
   );
 }
