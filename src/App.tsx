@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import './App.css';
 import { allUpgradeTiers } from './common/api/data';
 import { skillsState, totalXPState, xpRateSumState } from './common/api/state';
-import Frontpage from './Components/Frontpage';
+import LegacyPage from './pages/LegacyPage';
 import RecoilPage from './pages/RecoilPage';
 
 function App() {
@@ -26,13 +27,22 @@ function App() {
 
   return (
     <div className="App">
-      <header>
-        <div className="container">Placeholder</div>
-      </header>
-      <div className="container">
-        <Frontpage></Frontpage>
-        <RecoilPage />
-      </div>
+      <Router>
+        <header>
+          <div className="container">Placeholder</div>
+        </header>
+        <main className="container">
+          <Switch>
+            <Route exact path="/">
+              <RecoilPage />
+            </Route>
+
+            <Route path="/old">
+              <LegacyPage />
+            </Route>
+          </Switch>
+        </main>
+      </Router>
     </div>
   );
 }

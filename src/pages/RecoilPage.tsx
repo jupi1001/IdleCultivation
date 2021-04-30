@@ -5,7 +5,6 @@ import XPCounter from '../Components/XPCounter';
 const RecoilPage = () => {
   return (
     <div>
-      <h2>Hi</h2>
       <XPCounter />
       <SkillTable />
     </div>
