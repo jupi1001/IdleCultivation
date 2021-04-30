@@ -1,21 +1,14 @@
-import { useRecoilState } from 'recoil';
-import { totalXPState } from '../common/api/state';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { totalXPState, xpRateSumState } from '../common/api/state';
 
 const XPCounter = () => {
-  const [totalXP, setTotalXP] = useRecoilState(totalXPState);
-
-  const onClick = (e: any) => {
-    e.preventDefault();
-
-    setTotalXP(totalXP + 1);
-  };
+  const [totalXP] = useRecoilState(totalXPState);
+  const xpRateSum = useRecoilValue(xpRateSumState);
 
   return (
     <div>
-      <div>
-        <button onClick={onClick}>increase</button>
-      </div>
-      <div>Total XP: {totalXP}</div>
+      <div>Total XP: {totalXP.toFixed(2)}</div>
+      <div>XP Rate: {xpRateSum.toFixed(2)}</div>
     </div>
   );
 };
