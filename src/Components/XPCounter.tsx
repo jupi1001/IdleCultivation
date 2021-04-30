@@ -1,8 +1,9 @@
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { totalXPState, xpRateSumState } from '../common/api/state';
+import { premiumCurrencyState, totalXPState, xpRateSumState } from '../common/api/state';
 
 const XPCounter = () => {
   const [totalXP] = useRecoilState(totalXPState);
+  const [premiumCurrency] = useRecoilState(premiumCurrencyState);
   const xpRateSum = useRecoilValue(xpRateSumState);
 
   return (
@@ -18,8 +19,7 @@ const XPCounter = () => {
       <p className="menu-label">Premium Währung</p>
       <ul className="menu-list">
         <li>
-          {/* <p>{premiumCurrency}</p> */}
-          <p>500</p>
+          <p>{premiumCurrency}</p>
         </li>
       </ul>
     </aside>

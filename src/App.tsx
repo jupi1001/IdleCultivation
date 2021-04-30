@@ -6,6 +6,7 @@ import { allUpgradeTiers } from './common/api/data';
 import { skillsState, totalXPState, xpRateSumState } from './common/api/state';
 import LegacyPage from './pages/LegacyPage';
 import RecoilPage from './pages/RecoilPage';
+import ShopPage from './pages/ShopPage';
 
 function App() {
   const [totalXP, setTotalXP] = useRecoilState(totalXPState);
@@ -57,6 +58,10 @@ function App() {
 
             <Route path="/old">
               <LegacyPage />
+            </Route>
+
+            <Route path="/shop">
+              <ShopPage />
             </Route>
           </Switch>
         </main>

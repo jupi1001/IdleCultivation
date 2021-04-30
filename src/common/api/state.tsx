@@ -6,6 +6,11 @@ export const totalXPState = atom({
   default: 10,
 });
 
+export const premiumCurrencyState = atom({
+  key: 'premiumCurrency',
+  default: 500,
+});
+
 export const skillsState = atom<Skill[]>({
   key: 'skills',
   default: [{ id: 1, name: 'Augment', desc: 'Augment your body.', cost: 10, level: 0, xpRate: 0, xpMultiplier: 2 }],

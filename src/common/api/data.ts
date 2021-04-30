@@ -1,3 +1,4 @@
+import { ShopItem } from '../types/shopItem';
 import { UpgradeTier } from '../types/upgradeTier';
 
 export const allUpgradeTiers: UpgradeTier[] = [
@@ -25,4 +26,9 @@ export const allUpgradeTiers: UpgradeTier[] = [
       level: 0,
     },
   },
+];
+
+export const allShopItems: ShopItem[] = [
+  { name: 'a', price: 500 },
+  { name: 'b', price: 1000 },
 ];
