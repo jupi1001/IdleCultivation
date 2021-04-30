@@ -42,11 +42,11 @@ function App() {
           <Link to="/" className="navbar-item">
             Home
           </Link>
-          <Link to="/old" className="navbar-item">
-            Legacy
-          </Link>
           <Link to="/shop" className="navbar-item">
             Shop
+          </Link>
+          <Link to="/old" className="navbar-item">
+            Legacy
           </Link>
         </nav>
 

@@ -1,11 +1,11 @@
 import ShopItems from '../Components/ShopItems';
-import XPCounter from '../Components/XPCounter';
+import SideMenu from '../Components/SideMenu';
 
 const ShopPage = () => {
   return (
     <div className="columns">
       <div className="column is-2">
-        <XPCounter />
+        <SideMenu />
       </div>
       <div className="column is-10">
         <ShopItems />

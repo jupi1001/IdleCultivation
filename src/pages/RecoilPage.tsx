@@ -1,12 +1,12 @@
 import React from 'react';
+import SideMenu from '../Components/SideMenu';
 import SkillTable from '../Components/SkillTable';
-import XPCounter from '../Components/XPCounter';
 
 const RecoilPage = () => {
   return (
     <div className="columns">
       <div className="column is-2">
-        <XPCounter />
+        <SideMenu />
       </div>
       <div className="column is-10">
         <SkillTable />
