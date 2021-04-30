@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import './App.css';
 import { allUpgradeTiers } from './common/api/data';
@@ -26,12 +26,30 @@ function App() {
   });
 
   return (
-    <div className="App">
+    <div className="container">
       <Router>
         <header>
           <div className="container">Placeholder</div>
         </header>
-        <main className="container">
+
+        <nav className="navbar" role="navigation" aria-label="main navigation">
+          <div className="navbar-brand">
+            <a className="navbar-item" href="/">
+              <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" alt="bulma logo" />
+            </a>
+          </div>
+          <Link to="/" className="navbar-item">
+            Home
+          </Link>
+          <Link to="/old" className="navbar-item">
+            Legacy
+          </Link>
+          <Link to="/shop" className="navbar-item">
+            Shop
+          </Link>
+        </nav>
+
+        <main className="">
           <Switch>
             <Route exact path="/">
               <RecoilPage />

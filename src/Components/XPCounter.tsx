@@ -6,10 +6,23 @@ const XPCounter = () => {
   const xpRateSum = useRecoilValue(xpRateSumState);
 
   return (
-    <div>
-      <div>Total XP: {totalXP.toFixed(2)}</div>
-      <div>XP Rate: {xpRateSum.toFixed(2)}</div>
-    </div>
+    <aside className="menu">
+      <p className="menu-label">Xp Rate</p>
+      <ul className="menu-list">
+        <li>
+          <p>
+            {totalXP.toFixed(2)} + {xpRateSum.toFixed(2)}
+          </p>
+        </li>
+      </ul>
+      <p className="menu-label">Premium Währung</p>
+      <ul className="menu-list">
+        <li>
+          {/* <p>{premiumCurrency}</p> */}
+          <p>500</p>
+        </li>
+      </ul>
+    </aside>
   );
 };
 
