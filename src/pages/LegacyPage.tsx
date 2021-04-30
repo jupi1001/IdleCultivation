@@ -1,4 +1,4 @@
-import Frontpage from '../Components/Frontpage';
+import Frontpage from '../Components/legacy/Frontpage';
 
 const LegacyPage = () => {
   return (

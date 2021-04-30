@@ -16,7 +16,14 @@ const ShopItemComponent: React.FC<ShopItemProps> = ({ item }) => {
         <img src="https://bulma.io/images/placeholders/64x64.png" alt="abc" />
       </figure>
       <p className="has-text-centered">{item.name}</p>
-      <button className="button" onClick={() => setPremiumCurrency(premiumCurrency - item.price)}>
+      <button
+        className="button"
+        onClick={() => {
+          if (premiumCurrency >= item.price) {
+            setPremiumCurrency(premiumCurrency - item.price);
+          }
+        }}
+      >
         {item.price}
       </button>
     </div>
