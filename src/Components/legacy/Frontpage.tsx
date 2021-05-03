@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import UpgradeComponent from "./UpgradeComponent";
-import Shop from "./Shop";
+import React, { useEffect, useState } from 'react';
+import UpgradeComponent from './UpgradeComponent';
+import Shop from './Shop';
 
 function Frontpage() {
   //Variable States
