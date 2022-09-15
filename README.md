@@ -1,3 +1,5 @@
+Deprecated
+
 # Just some Fun
 Idle Game
 
